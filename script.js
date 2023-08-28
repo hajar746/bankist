@@ -1,5 +1,5 @@
 'use strict';
-// "A beautiful and interactive landing page for a fictional online banking platform, built from the ground up using the latest JavaScript features and WebAPIs."
+
 // ///////////////////////////////////////
 // Modal window
 const modal = document.querySelector('.modal');
@@ -288,17 +288,3 @@ const slider = function () {
 };
 // calling the whole slider function
 slider();
-
-document.addEventListener('DOMContentLoaded', function (e) {
-  console.log('html parsed and dom tree built!', e);
-});
-
-window.addEventListener('load', function (e) {
-  console.log('page fully loaded', e);
-});
-
-// window.addEventListener('beforeunload', function (e) {
-//   e.preventDefault();
-//   console.log(e);
-//   e.returnValue = '';
-// });
