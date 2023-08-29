@@ -261,10 +261,9 @@ const slider = function () {
     // removes all active classes and activates class for first dot
     activateDot(0);
     //scroll back to the top of page whenever you reload
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    };
+    topOfPage();
   };
+
   init();
 
   // Event Handlers
