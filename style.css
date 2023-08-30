@@ -171,6 +171,23 @@ img {
   color: #333;
 }
 
+.toggle-button {
+  position: absolute;
+  top: 2.5rem;
+  right: 1.5rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 4px;
+  width: 100%;
+  background-color: #222;
+  border-radius: 10px;
+}
 /* HEADER */
 .header {
   padding: 0 3rem;
@@ -208,7 +225,7 @@ h4 {
   width: 100%;
   grid-column: 2 / 3;
   grid-row: 1 / span 4;
-  transform: translateY(-6rem);
+  transform: translateY(-4rem);
 }
 
 .highlight {
@@ -672,4 +689,112 @@ h4 {
   color: #bbb;
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 950px) {
+  .toggle-button {
+    display: flex;
+    z-index: 1;
+  }
+
+  .nav__links {
+    display: none;
+    transform: translateY(3.5rem);
+    flex-direction: column;
+    padding: 2rem 4rem;
+    background-color: #37383d;
+    color: white;
+    align-items: center;
+    position: absolute;
+    right: 0.75rem;
+    margin-top: 5rem;
+    width: 50%;
+  }
+  .nav__link li a {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    padding: 3rem 0;
+  }
+  .nav__logo {
+    transform: translateX(-4rem);
+  }
+  .toggle-button.active .bar {
+    background-color: #aaa;
+  }
+  .toggle-button.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .toggle-button.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    transition: all 0.3s;
+  }
+  .toggle-button.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    transition: all 0.5s;
+  }
+  .nav__links.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 750px) {
+  img.header__img {
+    display: none;
+  }
+
+  div.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: all 0.3s;
+  }
+  div.info {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  div.title {
+    flex-direction: column;
+  }
+  div.info {
+    width: fit-content;
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .features {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+  }
+  h5.features__header {
+    width: max-content;
+  }
+  h3.section__header {
+    font-size: 25px;
+  }
+
+  button.btn.operations__tab {
+    width: 127px;
+  }
+  div.operations__content,
+  p {
+    width: fit-content;
+  }
+  h5.testimonial__header,
+  div.dots,
+  img.features__img {
+    display: none;
+  }
 }

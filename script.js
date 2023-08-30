@@ -33,6 +33,16 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+// NAVBAR TOGGLE
+// selecting toggle btna and nav links container
+const toggleBtn = document.querySelector('.toggle-button');
+const navLinks = document.querySelector('.nav__links');
+// add active class
+toggleBtn.addEventListener('click', function () {
+  toggleBtn.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
 // COOKIE POPUP`
 // creating a div (which will be the cookie popup)
 const message = document.createElement('div');
@@ -75,6 +85,11 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     //  getting the href of the link and using it as a selector for scrolling
     const id = e.target.getAttribute('href');
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+  // removing nav bar when and toggle btn
+  if (toggleBtn.classList.contains('active')) {
+    toggleBtn.classList.remove('active');
+    navLinks.classList.remove('active');
   }
 });
 
